@@ -44,6 +44,7 @@ typedef enum {
 
 @property (nonatomic, assign) MFSideMenuState menuState;
 @property (nonatomic, assign) MFSideMenuPanMode panMode;
+@property (nonatomic, assign) BOOL panFromEdge;
 
 // menu open/close animation duration -- user can pan faster than default duration, max duration sets the limit
 @property (nonatomic, assign) CGFloat menuAnimationDefaultDuration;

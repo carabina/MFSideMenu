@@ -84,6 +84,7 @@ typedef enum {
     self.menuAnimationDefaultDuration = 0.2f;
     self.menuAnimationMaxDuration = 0.4f;
     self.panMode = MFSideMenuPanModeDefault;
+    self.panFromEdge = YES;
     self.viewHasAppeared = NO;
 }
 
@@ -527,6 +528,23 @@ typedef enum {
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    if ([self.centerViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigationController = (UINavigationController *)self.centerViewController;
+        if (navigationController.viewControllers.count > 1 && navigationController.interactivePopGestureRecognizer.enabled) {
+            return NO;
+        }
+    }
+    
+    if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] &&
+        self.menuState == MFSideMenuStateClosed) {
+        CGPoint point = [touch locationInView:gestureRecognizer.view];
+        if (point.x < 20.0 || point.x > self.view.frame.size.width - 20.0) {
+            return YES;
+        } else {
+            return NO;
+        }
+    }
+    
     if([gestureRecognizer isKindOfClass:[UITapGestureRecognizer class]] &&
        self.menuState != MFSideMenuStateClosed) return YES;
     

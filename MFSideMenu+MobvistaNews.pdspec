@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
-  s.name     = 'MFSideMenu'
-  s.version  = '0.5.5'
+  s.name     = 'MFSideMenu+MobvistaNews'
+  s.version  = '0.5.6'
   s.license  = 'BSD'
   s.summary  = 'Facebook-like side menu for iOS.'
-  s.homepage = 'https://github.com/mikefrederick/MFSideMenu'
+  s.homepage = 'https://github.com/yehuanwen/MFSideMenu'
   s.author   = { 'Michael Frederick' => 'mike@viamike.com' }
-  s.source   = { :git => 'https://github.com/mikefrederick/MFSideMenu.git', :tag => s.version.to_s }
+  s.source   = { :git => 'https://github.com/yehuanwen/MFSideMenu.git', :tag => s.version.to_s }
   s.platform = :ios
   s.requires_arc = true
   s.source_files = 'MFSideMenu/*'
