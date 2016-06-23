@@ -528,6 +528,7 @@ typedef enum {
 #pragma mark - UIGestureRecognizerDelegate
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    // check
     if ([self.centerViewController isKindOfClass:[UINavigationController class]]) {
         UINavigationController *navigationController = (UINavigationController *)self.centerViewController;
         if (navigationController.viewControllers.count > 1 && navigationController.interactivePopGestureRecognizer.enabled) {
