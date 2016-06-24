@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name     = 'MFSideMenu+MobvistaNews'
-  s.version  = '0.5.7'
+  s.version  = '0.5.8'
   s.license  = 'BSD'
   s.summary  = 'Facebook-like side menu for iOS.'
   s.homepage = 'https://github.com/yehuanwen/MFSideMenu'
